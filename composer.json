@@ -10,11 +10,13 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.5",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "morilog/jalali": "3.*",
-        "realrashid/sweet-alert": "^3.2"
+        "realrashid/sweet-alert": "^3.2",
+        "samkaveh/book": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -34,6 +36,12 @@
             "Samkaveh\\Subject\\": "modules/Samkaveh/Subject/"
         }
     },
+    "repositories":[
+        {
+            "type": "path",
+            "url": "modules/Samkaveh/Book"
+        }
+    ],
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"

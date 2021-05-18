@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Samkaveh\Book\Models\Book;
 
 class Subject extends Model
 {
@@ -35,6 +36,11 @@ class Subject extends Model
     public function getDaysOfCreatedAt()
     {
       return \Morilog\Jalali\Jalalian::fromCarbon(Carbon::parse($this->create_at));
+    }
+
+    public function books()
+    {
+        return $this->belongsToMany(Book::class);
     }
 
 }

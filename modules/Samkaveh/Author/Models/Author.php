@@ -2,11 +2,11 @@
 
 namespace Samkaveh\Author\Models;
 
-use App\Models\Test;
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Samkaveh\Book\Models\Book;
 
 class Author extends Model
 {
@@ -39,9 +39,9 @@ class Author extends Model
     }
 
 
-    public function tests()
+    public function books()
     {
-        return $this->belongsToMany(Test::class);
+        return $this->belongsToMany(Book::class);
     }
 
 
