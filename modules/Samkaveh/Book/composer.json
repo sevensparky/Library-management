@@ -1,0 +1,15 @@
+{
+    "name": "samkaveh/book",
+    "autoload":{
+        "psr-4":{
+            "Samkaveh\\Book\\": "src"
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Samkaveh\\Book\\Providers\\BookServiceProvider"
+            ]
+        }
+    }
+}
