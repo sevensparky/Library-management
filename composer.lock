@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2b3085c4d10ee6e4df89600f75555c9",
+    "content-hash": "bbbf0429f20f15669c83956485455cd9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2822,6 +2822,31 @@
             "autoload": {
                 "psr-4": {
                     "Samkaveh\\Book\\": "src"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "samkaveh/user",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "modules/Samkaveh/User",
+                "reference": "17f5cf8b52738703455afe7a9daf6724bbd284bc"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Samkaveh\\User\\Providers\\UserServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Samkaveh\\User\\": "src"
                 }
             },
             "transport-options": {
@@ -7844,7 +7869,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "samkaveh/book": 20
+        "samkaveh/book": 20,
+        "samkaveh/user": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

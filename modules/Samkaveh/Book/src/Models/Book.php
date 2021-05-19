@@ -2,7 +2,7 @@
 
 namespace Samkaveh\Book\Models;
 
-use App\Models\User;
+use Samkaveh\User\Models\User;
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

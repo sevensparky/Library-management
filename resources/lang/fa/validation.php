@@ -174,5 +174,8 @@ return [
         'price'                 => 'قیمت',
         'weigth'                => 'وزن',
         'pages'                 => 'صفحات',
+        'img_profile'         => 'تصویر کاربر',
+        'father_name'           => 'نام پدر',
+        'latest_evidence'       => 'آخرین مدرک تحصیلی',
     ],
 ];

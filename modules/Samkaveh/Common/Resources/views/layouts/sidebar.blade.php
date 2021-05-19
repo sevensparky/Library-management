@@ -74,7 +74,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('books.index') }}"><i class="fa fa-circle-o"></i>همه کاربران</a></li>
+            <li><a href="{{ route('users.index') }}"><i class="fa fa-circle-o"></i>همه کاربران</a></li>
             <li><a href="{{ route('books.index') }}"><i class="fa fa-circle-o"></i>امانتی ها</a></li>
           </ul>
         </li>

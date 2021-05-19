@@ -1,0 +1,16 @@
+{
+    "name": "samkaveh/user",
+    "autoload":{
+        "psr-4":{
+                "Samkaveh\\User\\": "src"
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Samkaveh\\User\\Providers\\UserServiceProvider"
+            ]
+        }
+    }
+
+}

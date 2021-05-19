@@ -16,7 +16,8 @@
         "laravel/ui": "^3.2",
         "morilog/jalali": "3.*",
         "realrashid/sweet-alert": "^3.2",
-        "samkaveh/book": "dev-master"
+        "samkaveh/book": "dev-master",
+        "samkaveh/user": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -40,6 +41,10 @@
         {
             "type": "path",
             "url": "modules/Samkaveh/Book"
+        },
+        {
+            "type": "path",
+            "url": "modules/Samkaveh/User"
         }
     ],
     "autoload-dev": {
