@@ -1,6 +1,6 @@
 @extends('Common::layouts.master')
 @section('content')
-<div class="row">
+<div class="row" style="margin-top: 20px">
     <div class="col-md-3">
       <div class="box box-primary">
         <div class="box-body box-profile">
@@ -181,4 +181,12 @@
       </div>
     </div>
   </div>
+@endsection
+
+@section('breadcrumb')
+    <li><a href="{{ route('books.index') }}">کتاب ها</a></li>
+    <li>مشاهده کتاب</li>
+@endsection
+@section('title')
+    مشاهده کتاب {{ $book->title }}
 @endsection

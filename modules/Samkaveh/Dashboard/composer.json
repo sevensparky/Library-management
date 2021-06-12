@@ -1,0 +1,15 @@
+{
+    "name": "samkaveh/dashboard",
+    "autoload":{
+        "psr-4":{
+           "Samkaveh\\Dashboard\\": "src"
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "Samkaveh\\Dashboard\\Providers\\DashboardServiceProvider"
+            ]
+        }
+    }
+}

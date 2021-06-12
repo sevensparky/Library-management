@@ -18,6 +18,7 @@
                             <th>تصویر کاربر</th>
                             <th>نام کاربر</th>
                             <th>تاریخ ثبت نام</th>
+                            <th>امانت برده</th>
                             <th>تنظیمات</th>
                         </tr>
                         </thead>
@@ -28,6 +29,13 @@
                             <td><img src="{{ $user->getImageUserProfile() }}" width="80" height="80"></td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->getDaysOfCreatedAt() }}</td>
+                            <td>
+                               @if (!empty($user->books->all()))
+                                    <strong class="badge bg-green p-3">بله</strong>
+                               @else
+                               <strong class="badge bg-blue">خیر</strong>
+                               @endif
+                            </td>
                             <td>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="post">
                                     @csrf
@@ -48,4 +56,12 @@
             </div>
         </section>
     </div>
+@endsection
+
+
+@section('breadcrumb')
+    <li>کاربران</li>
+@endsection
+@section('title')
+کاربران
 @endsection

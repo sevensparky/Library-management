@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Samkaveh\Author\Database\Seeders\AuthorSeeder;
+use Samkaveh\Subject\Database\Seeders\SubjectSeeder;
+use Samkaveh\User\Database\Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \Samkaveh\User\Models\User::factory(10)->create();
+        $this->call([
+            SubjectSeeder::class,
+            AuthorSeeder::class,
+            UserSeeder::class
+        ]);
     }
 }

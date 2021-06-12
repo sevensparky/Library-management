@@ -3,8 +3,10 @@
 namespace Samkaveh\User\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
-use Samkaveh\User\databases\Repositories\UserRepository;
+use Illuminate\Support\Facades\Auth;
+use Samkaveh\User\Database\Repositories\UserRepository;
 use Samkaveh\User\Models\User;
 use Samkaveh\User\Http\Requests\UserRequest;
 
@@ -12,15 +14,6 @@ class UserController extends Controller
 {
 
     public $repository;
-    
-    protected $userInfo = [
-        'name',
-        'mobile',
-        'father_name',
-        'national_code',
-        'latest_evidence',
-        'email',
-    ];
 
     public function __construct(UserRepository $userRepository)
     {
@@ -39,7 +32,7 @@ class UserController extends Controller
    
     public function store(UserRequest $request)
     {
-        $this->repository->store($request);
+       return $this->repository->store($request);
     }
     
     public function show(User $user)
@@ -54,7 +47,7 @@ class UserController extends Controller
    
     public function update(Request $request, User $user)
     {
-       $this->repository->update($request, $user);
+       return $this->repository->update($request, $user);
     }
 
     

@@ -5,13 +5,12 @@ namespace Samkaveh\Book\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Samkaveh\Book\Models\Book;
 use Illuminate\Http\Request;
-use Samkaveh\Book\databases\Repositories\BookRepository;
+use Samkaveh\Book\Database\Repositories\BookRepository;
 use Samkaveh\Book\Http\Requests\BookRequest;
 
 class BookController extends Controller
 {
-
-    public $repository;
+    protected $repository;
 
     public function __construct(BookRepository $bookRepository)
     {
@@ -20,7 +19,7 @@ class BookController extends Controller
 
     public function index()
     {
-        return view('Book::index', ['books' => Book::all()]);
+        return view('Book::index', ['books' => $this->repository->all()]);
     }
 
     public function create()
@@ -30,7 +29,7 @@ class BookController extends Controller
 
     public function store(BookRequest $request)
     {
-        $this->repository->store($request);
+        return $this->repository->store($request);
     }
 
     public function show(Book $book)
@@ -45,11 +44,11 @@ class BookController extends Controller
 
     public function update(Request $request, Book $book)
     {
-        $this->repository->update($request, $book);
+        return $this->repository->update($request, $book);
     }
 
     public function destroy(Book $book)
     {
-        $this->repository->delete($book);
+        return $this->repository->delete($book);
     }
 }

@@ -6,7 +6,7 @@
             <div class="box">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">ویرایش کتاب {{ $book->title }}</h3>
+                            <h3 class="box-title">ویرایش کتاب</h3>
                             <div class="pull-left box-tools">
                                 <a href="{{ route('books.index')  }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>
                                 </a>
@@ -22,7 +22,7 @@
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <x-select name="authors[]" multiple>
+                                        <x-select name="authors[]" label="نویسنده یا مترجم" multiple>
                                             <option value="">نویسنده و مترجم را انتخاب کنید</option>
                                             @foreach (\Samkaveh\Author\Models\Author::all() as $author)
                                             <option value="{{ $author->id }}" @foreach ($book->authors as $item) {{ $item->id == $author->id ? 'selected' :'' }}  @endforeach >{{ $author->name }}</option>
@@ -30,7 +30,7 @@
                                         </x-select>
                                     </div>
                                     <div class="col-xs-6">  
-                                        <x-select name="subjects[]" multiple>
+                                        <x-select name="subjects[]" label="موضوع کتاب" multiple>
                                             <option value="">موضوع کتاب را انتخاب کنید</option>
                                             @foreach (\Samkaveh\Subject\Models\Subject::all() as $subject)                                            
                                                 <option value="{{ $subject->id }}" @foreach($book->subjects as $sub) {{  $sub->id == $subject->id ? 'selected' :''  }} @endforeach >{{ $subject->title }}</option>                                            
@@ -80,11 +80,19 @@
                             </div>
 
                             <div class="box-body">
-                                {{-- <div class="row"> --}}
-                                    <img src="{{ asset('storage/'.$book->image) }}" width="150" height="150" >
-                                {{-- </div> --}}
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <img src="{{ asset('storage/'.$book->image) }}" width="150" height="150" >
+                                        <x-input label="تصویر کتاب" type="file" name="image" />   
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <x-input label="تعداد کتاب" type="number" name="count" placeholder="تعداد کتاب را وارد کنید..." value="{{ $book->count }}" />   
+                                    </div>
+                                </div>
+                            </div>
 
-                                <x-input label="تصویر کتاب" type="file" name="image" />
+                            <div class="box-body">
+                                <textarea name="description" class="form-control" cols="30" rows="4" style="resize: none" placeholder="توضیحات کوتاهی را وارد کنید...">{{ $book->description }}</textarea>
                             </div>
 
                             <div class="box-footer">
@@ -95,4 +103,12 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('breadcrumb')
+    <li><a href="{{ route('books.index') }}">کتاب ها</a></li>
+    <li>ویرایش کتاب</li>
+@endsection
+@section('title')
+ویرایش کتاب {{ $book->title }}
 @endsection

@@ -13,7 +13,7 @@ class BookServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadMigrationsFrom(__DIR__.'/../databases/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../Routes/router.php');
         $this->loadViewsFrom(__DIR__.'/../Resources/views','Book');
     }
@@ -25,6 +25,10 @@ class BookServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        config()->set('sidebar.items.books',[
+            'url' => route('books.index'),
+            'icon' => 'fa-book',
+            'title' => 'کتاب ها'
+        ]);
     }
 }

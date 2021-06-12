@@ -24,7 +24,7 @@ class AuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3',
+            'name' => 'required|min:3|unique:authors',
             'description' => 'nullable|min:3'
         ];
     }

@@ -2,6 +2,7 @@
 @section('content')
     <div class="row">
             @include('Subject::layouts.errors.error')
+            
         <section class="col-lg-10 col-lg-offset-1" style="margin-top: 4rem">
             <div class="box">
                     <div class="box box-primary">
@@ -67,4 +68,12 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('breadcrumb')
+    <li><a href="{{ route('users.index') }}">کاربران</a></li>
+    <li>ثبت نام کاربر</li>
+@endsection
+@section('title')
+    ثبت نام کاربر جدید
 @endsection

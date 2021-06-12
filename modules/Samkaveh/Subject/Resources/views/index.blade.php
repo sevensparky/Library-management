@@ -47,3 +47,10 @@
         </section>
     </div>
 @endsection
+
+@section('breadcrumb')
+    <li>موضوعات</li>
+@endsection
+@section('title')
+افزودن موضوع
+@endsection

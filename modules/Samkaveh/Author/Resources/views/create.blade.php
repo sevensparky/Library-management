@@ -39,3 +39,11 @@
         </section>
     </div>
 @endsection
+
+@section('breadcrumb')
+    <li><a href="{{ route('authors.index') }}">نویسندگان و مترجمان</a></li>
+    <li>افزودن نویسنده یا مترجم</li>
+@endsection
+@section('title')
+افزودن نویسنده یا مترجم
+@endsection

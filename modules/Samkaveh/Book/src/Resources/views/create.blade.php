@@ -80,7 +80,18 @@
                             </div>
 
                             <div class="box-body">
-                                <x-input label="تصویر کتاب" type="file" name="image" />
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <x-input label="تصویر کتاب" type="file" name="image" />   
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <x-input label="تعداد کتاب" type="number" name="count" placeholder="تعداد کتاب را وارد کنید..." value="{{ old('count') }}" />   
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box-body">
+                                <textarea name="description" class="form-control" cols="30" rows="4" style="resize: none" placeholder="توضیحات کوتاهی را وارد کنید...">{{ old('description') }}</textarea>
                             </div>
 
                             <div class="box-footer">
@@ -91,4 +102,12 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('breadcrumb')
+    <li><a href="{{ route('books.index') }}">کتاب ها</a></li>
+    <li>افزودن کتاب</li>
+@endsection
+@section('title')
+افزودن کتاب
 @endsection

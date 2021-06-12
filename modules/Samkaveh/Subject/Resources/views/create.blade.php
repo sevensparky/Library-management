@@ -39,3 +39,11 @@
         </section>
     </div>
 @endsection
+
+@section('breadcrumb')
+    <li><a href="{{ route('subjects.index') }}">موضوعات</a></li>
+    <li>افزودن موضوع</li>
+@endsection
+@section('title')
+افزودن موضوع
+@endsection

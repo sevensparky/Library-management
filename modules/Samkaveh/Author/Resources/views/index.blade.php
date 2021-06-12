@@ -6,7 +6,7 @@
                 <div class="box-header mt-5">
                     <h3 class="box-title">نویسندگان</h3>
                     <div class="pull-left box-tools">
-                        <a href="{{ route('users.create')  }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
+                        <a href="{{ route('authors.create')  }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
                         </a>
                     </div>
                 </div>
@@ -21,17 +21,17 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users as $user)
+                        @foreach($authors as $author)
                         <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{  $user->getDaysOfCreatedAt() }}</td>
+                            <td>{{ $author->id }}</td>
+                            <td>{{ $author->name }}</td>
+                            <td>{{  $author->getDaysOfCreatedAt() }}</td>
                             <td>
-                                <form action="{{ route('users.destroy',$user->slug) }}" method="post">
+                                <form action="{{ route('authors.destroy',$author->slug) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <div class="pull-left box-tools">
-                                        <a style="margin-left: 0.5rem" href="{{ route('users.edit',$user->slug) }}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i>
+                                        <a style="margin-left: 0.5rem" href="{{ route('authors.edit',$author->slug) }}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i>
                                         </a>
                                         <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                     </div>
@@ -41,9 +41,16 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{-- {{ $users->links() }} --}}
+                    {{-- {{ $authors->links() }} --}}
                 </div>
             </div>
         </section>
     </div>
+@endsection
+
+@section('breadcrumb')
+    <li>نویسندگان و مترجمان</li>
+@endsection
+@section('title')
+نویسندگان و مترجمان
 @endsection

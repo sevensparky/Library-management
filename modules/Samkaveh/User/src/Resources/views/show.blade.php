@@ -68,7 +68,7 @@
                         <h3 class="timeline-header">نام پدر</h3>
         
                         <div class="timeline-body">
-                                {{ $user->father_name }}
+                          {{ $user->father_name }}
                         </div>
                       </div>
                 </li>
@@ -119,4 +119,12 @@
       </div>
     </div>
   </div>
+@endsection
+
+@section('breadcrumb')
+    <li><a href="{{ route('users.index') }}">کاربران</a></li>
+    <li>مشاهده اطلاعات کاربر {{ $user->name }}</li>
+@endsection
+@section('title')
+مشاهده اطلاعات کاربر
 @endsection

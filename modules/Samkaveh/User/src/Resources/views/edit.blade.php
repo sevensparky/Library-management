@@ -6,7 +6,7 @@
             <div class="box">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">افزودن کاربر</h3>
+                            <h3 class="box-title">ویرایش کاربر</h3>
                             <div class="pull-left box-tools">
                                 <a href="{{ route('users.index')  }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>
                                 </a>
@@ -68,4 +68,13 @@
             </div>
         </section>
     </div>
+@endsection
+
+
+@section('breadcrumb')
+    <li><a href="{{ route('users.index') }}">کاربران</a></li>
+    <li>ویرایش اطلاعات کاربر {{ $user->name }}</li>
+@endsection
+@section('title')
+ویرایش اطلاعات کاربر
 @endsection

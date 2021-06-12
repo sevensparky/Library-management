@@ -17,7 +17,9 @@
         "morilog/jalali": "3.*",
         "realrashid/sweet-alert": "^3.2",
         "samkaveh/book": "dev-master",
-        "samkaveh/user": "dev-master"
+        "samkaveh/dashboard": "dev-master",
+        "samkaveh/user": "dev-master",
+        "wulfheart/pretty_routes": "^0.3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -45,6 +47,10 @@
         {
             "type": "path",
             "url": "modules/Samkaveh/User"
+        },
+        {
+            "type": "path",
+            "url": "modules/Samkaveh/Dashboard"
         }
     ],
     "autoload-dev": {

@@ -2,7 +2,6 @@
 
 namespace Samkaveh\User\Models;
 
-use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -52,6 +51,12 @@ class User extends Authenticatable
     public function books()
     {
         return $this->belongsToMany(Book::class);
+    }
+
+    public function kali()
+    {
+        return $this->belongsToMany(Book::class)
+                    ->wherePivot('book_id', 1);
     }
 
 }
